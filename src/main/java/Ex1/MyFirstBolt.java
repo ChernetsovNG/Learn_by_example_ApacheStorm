@@ -1,4 +1,4 @@
-package HelloWorldExample;
+package Ex1;
 
 import org.apache.storm.topology.BasicOutputCollector;
 import org.apache.storm.topology.OutputFieldsDeclarer;

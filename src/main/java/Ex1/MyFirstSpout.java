@@ -1,4 +1,4 @@
-package HelloWorldExample;
+package Ex1;
 
 import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.TopologyContext;
