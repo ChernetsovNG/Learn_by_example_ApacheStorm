@@ -23,3 +23,4 @@ hs_err_pid*
 /*.iml
 /.idea/
 /logs/
+/src/main/java/Ex4/stormoutput/output-1-Filter-Fields-to-File-Bolt.txt
