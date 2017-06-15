@@ -1,4 +1,4 @@
-package Ex1;
+package Ex5;
 
 import org.apache.storm.topology.BasicOutputCollector;
 import org.apache.storm.topology.OutputFieldsDeclarer;

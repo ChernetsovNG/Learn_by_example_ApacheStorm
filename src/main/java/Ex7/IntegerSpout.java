@@ -1,4 +1,4 @@
-package Ex1;
+package Ex7;
 
 import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.TopologyContext;
@@ -9,20 +9,26 @@ import org.apache.storm.tuple.Values;
 
 import java.util.Map;
 
-public class MyFirstSpout extends BaseRichSpout {
+public class IntegerSpout extends BaseRichSpout {
     private SpoutOutputCollector collector;
     private Integer i = 0;
 
+    @Override
     public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
         this.collector = collector;
     }
 
+    @Override
     public void nextTuple() {
-        this.collector.emit(new Values(this.i));
-        this.i++;
+        while (i <= 100) {
+            Integer intBucket = i / 10;
+            collector.emit(new Values(i.toString(), intBucket.toString()));
+            i++;
+        }
     }
 
+    @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("field"));
+        declarer.declare(new Fields("integer", "bucket"));
     }
 }
